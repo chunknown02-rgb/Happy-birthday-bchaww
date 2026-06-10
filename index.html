@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Meerub ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:radial-gradient(circle at top,#2a001f,#000);
+overflow:hidden;
+color:white;
+font-family:'Inter',sans-serif;
+}
+
+/* HEADINGS */
+h1,h2{
+font-family:'Playfair Display',serif;
+text-shadow:0 0 20px #ff4da6;
+}
+
+/* LOCK */
+#lock{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+#heart{
+font-size:140px;
+cursor:pointer;
+animation:beat 1.2s infinite;
+filter:drop-shadow(0 0 30px #ff4da6);
+}
+
+@keyframes beat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.25);}
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(15px);
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+.box{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 60px #ff4da6;
+width:90%;
+max-width:380px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+outline:none;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#ff4da6,#ff78c6);
+color:white;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* MAIN */
+#main{
+display:none;
+padding:20px;
+text-align:center;
+animation:reveal 2s ease;
+}
+
+@keyframes reveal{
+from{opacity:0;transform:scale(1.2);filter:blur(10px);}
+to{opacity:1;transform:scale(1);filter:blur(0);}
+}
+
+.glass{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(30px);
+border:1px solid rgba(255,255,255,.2);
+padding:30px;
+border-radius:30px;
+max-width:900px;
+margin:auto;
+}
+
+/* PHOTO */
+.photo{
+width:300px;
+height:300px;
+margin:20px auto;
+padding:6px;
+border-radius:25px;
+background:linear-gradient(45deg,#ff4da6,#fff,#ff4da6);
+animation:glow 4s linear infinite;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:20px;
+}
+
+@keyframes glow{
+0%{filter:hue-rotate(0deg);}
+100%{filter:hue-rotate(360deg);}
+}
+
+/* 💖 CUTE PARAGRAPH */
+.cute-paragraph{
+margin-top:20px;
+padding:15px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+font-family:'Dancing Script', cursive;
+font-size:1.2rem;
+line-height:2;
+text-shadow:0 0 10px rgba(255,255,255,0.2);
+}
+
+/* LETTER */
+#letter{
+margin-top:20px;
+white-space:pre-line;
+min-height:160px;
+font-family:'Dancing Script',cursive;
+font-size:1.4rem;
+line-height:2.2;
+}
+
+/* MUSIC */
+.music{
+margin-top:15px;
+padding:12px 25px;
+border-radius:30px;
+border:none;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+}
+
+/* HEARTS */
+.heart{
+position:fixed;
+font-size:20px;
+animation:rise 7s linear forwards;
+}
+
+@keyframes rise{
+from{transform:translateY(0);opacity:1;}
+to{transform:translateY(-120vh);opacity:0;}
+}
+
+/* ROSES */
+.rose{
+position:fixed;
+top:-10px;
+font-size:22px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{transform:translateY(120vh) rotate(360deg);opacity:0;}
+}
+
+/* UPLOAD */
+.upload{
+margin-top:20px;
+padding:10px;
+border:1px dashed rgba(255,255,255,.4);
+border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+<div id="heart">❤️</div>
+<h2>A Special Surprise Awaits You</h2>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="box">
+<h3>Enter Secret Code 💖</h3>
+<input type="password" id="code">
+<button onclick="check()">Unlock</button>
+<p id="msg"></p>
+</div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+<div class="glass">
+
+<h1>👑 Princess 👑</h1>
+<h2>Happy Birthday Meerub Jee ❤️</h2>
+
+<!-- PHOTO -->
+<div class="photo">
+<img id="imgPreview">
+</div>
+
+<!-- UPLOAD -->
+<div class="upload">
+<h3>📤 Add Your Memory</h3>
+<input type="file" id="imgInput" accept="image/*">
+<br><br>
+<input type="file" id="songInput" accept="audio/*">
+</div>
+
+<!-- 💖 CUTE PARAGRAPH -->
+<div class="cute-paragraph">
+From the moment you came into my life, everything became more beautiful 💖  
+You are my peace, my blessing, and my whole world 🌸  
+
+Every smile of yours makes my heart calm ✨  
+Happy Birthday My Queen 👑💐
+</div>
+
+<!-- LETTER -->
+<div id="letter"></div>
+
+<audio id="song">
+<source src="">
+</audio>
+
+<button class="music" onclick="toggleMusic()">🎵 Play Song</button>
+
+<br><br>
+<footer>Apka Shohar Zain Ul Abadeen 🌷</footer>
+
+</div>
+</div>
+
+<script>
+
+document.getElementById("heart").onclick=()=>{
+document.getElementById("modal").style.display="flex";
+}
+
+const secret="Meerubzain";
+
+function check(){
+let v=document.getElementById("code").value;
+
+if(v===secret){
+document.getElementById("modal").style.display="none";
+document.getElementById("lock").style.display="none";
+document.getElementById("main").style.display="block";
+
+typeText();
+effects();
+voice();
+
+}else{
+document.getElementById("msg").innerText="Oops! Wrong Code 😘";
+}
+}
+
+/* LETTER */
+let text=`My Dearest Meerub Jee ❤️
+
+You are my queen, my universe, my forever.
+
+Happy Birthday 👑
+
+Forever Yours,
+Zain Ul Abadeen 🌷`;
+
+let i=0;
+function typeText(){
+if(i<text.length){
+document.getElementById("letter").innerHTML+=text[i];
+i++;
+setTimeout(typeText,30);
+}
+}
+
+/* MUSIC */
+function toggleMusic(){
+let song=document.getElementById("song");
+song.paused ? song.play() : song.pause();
+}
+
+/* IMAGE UPLOAD */
+document.getElementById("imgInput").addEventListener("change",(e)=>{
+document.getElementById("imgPreview").src=URL.createObjectURL(e.target.files[0]);
+});
+
+/* SONG UPLOAD */
+document.getElementById("songInput").addEventListener("change",(e)=>{
+let song=document.getElementById("song");
+song.querySelector("source").src=URL.createObjectURL(e.target.files[0]);
+song.load();
+});
+
+/* HEARTS */
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),7000);
+},200);
+
+/* ROSES */
+function effects(){
+setInterval(()=>{
+let r=document.createElement("div");
+r.className="rose";
+r.innerHTML="🌹";
+r.style.left=Math.random()*100+"vw";
+r.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(r);
+setTimeout(()=>r.remove(),6000);
+},250);
+}
+
+/* VOICE */
+function voice(){
+let msg=new SpeechSynthesisUtterance(
+"Happy Birthday Meerub. You are my princess, my forever love."
+);
+msg.rate=0.9;
+setTimeout(()=>speechSynthesis.speak(msg),1500);
+}
+
+</script>
+
+</body>
+  </html>
